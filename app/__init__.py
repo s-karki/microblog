@@ -5,6 +5,7 @@ from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_mail import Mail
 from flask_bootstrap import Bootstrap
+from flask_moment import Moment
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler # enable email
 import os
@@ -17,6 +18,7 @@ migrate = Migrate(app, db) # makes migration easier
 mail = Mail(app)
 
 bootstrap = Bootstrap(app)
+moment = Moment(app)
 
 login = LoginManager(app)
 login.login_view = 'login' # url_for('login'), view endpoint. If not logged in, redirect to login endpoint

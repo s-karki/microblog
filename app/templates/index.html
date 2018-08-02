@@ -1,5 +1,6 @@
 	{% extends "base.html" %}
 
+	{% import 'bootstrap/wtf.html' as wtf %}
 
 	{% block app_content %}
 	    <h1>Hi, {{ current_user.username }}!</h1>
@@ -25,33 +26,3 @@
 	        </ul>
 	    </nav>
 	{% endblock %}
-
-<!--
-	<body>
-
-		<h1> Hello {{current_user.username}}</h1>
-
-
-		{% if form %}
-		<form action="", method="post">
-			{{ form.hidden_tag() }}
-			<p>
-				{{ form.body.label }} <br>
-				{{ form.body(cols = 32, rows = 4) }} <br>
-				{% for error in form.body.errors %}
-				<span style="color: red;">{{ error }}</span>
-				{% endfor %}
-			</p>
-			<p>
-				{{ form.submit() }}
-			</p>
-		</form>
-		{% endif %}
-		{% for post in posts %}
-			{% include "_post.html" %}
-		{% endfor %}
-
-	{% include "_pagination.html" %}
-	</body>
-	{% endblock %}
--->
